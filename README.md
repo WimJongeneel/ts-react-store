@@ -4,14 +4,14 @@ A store-based statemanagement library for React.
 
 ## Creating stores
 
-Stores are created via the `StoreBuilder` class via the static `create` or `fromValue` methods.
+Stores are created with the `StoreBuilder` via the static `create` or `fromValue` methods.
 
 ```ts
 const userStore = StoreBuilder.fromValue({ name: 'wim', age: 25 })
     .buildStore()
 ```
 
-Next to the value a store does contain the actions that get invoked via the dispatcher. To add a single action `withAction` is used. An action has a `name` and an `action` which is the function that creates a new `Value` from the old value and the (optional) payload.
+Next to a value a store does contain the actions that can be invoked via the dispatcher. To add a single action the `withAction` method is used. An action has a `name` and an `action`, which is the function that creates a new value from the old value and the (optional) payload.
 
 ```ts
 const userStore = StoreBuilder.fromValue({ name: 'wim', age: 25 })
@@ -25,7 +25,7 @@ const userStore = StoreBuilder.fromValue({ name: 'wim', age: 25 })
     .buildStore()
 ```
 
-Alternatively, multiple actions can be added with `withActions`, This method takes an object where the keys are the `name` and the values the `action`.
+Alternatively, multiple actions can be added with the `withActions` method, this method takes an object where the keys are the `name` and the values the `action`.
 
 ```ts
 const userStore = StoreBuilder.fromValue({ name: 'wim', age: 25 })
